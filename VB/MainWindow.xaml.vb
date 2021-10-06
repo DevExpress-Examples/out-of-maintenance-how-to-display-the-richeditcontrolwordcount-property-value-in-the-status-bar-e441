@@ -1,24 +1,25 @@
-﻿Imports Microsoft.VisualBasic
 Imports System
 Imports System.Windows
 
 Namespace RichEditWordCountStatusBarWpf
-	Partial Public Class MainWindow
-		Inherits Window
-		Public Sub New()
-			InitializeComponent()
-		End Sub
 
-		Private Sub MainWindow_Loaded(ByVal sender As Object, ByVal e As RoutedEventArgs)
-			UpdateStatusBar()
-		End Sub
+    Public Partial Class MainWindow
+        Inherits Window
 
-		Private Sub richEditControl1_ContentChanged(ByVal sender As Object, ByVal e As EventArgs)
-			UpdateStatusBar()
-		End Sub
+        Public Sub New()
+            InitializeComponent()
+        End Sub
 
-		Private Sub UpdateStatusBar()
-			siWords.Content = richEditControl1.WordCount
-		End Sub
-	End Class
+        Private Sub MainWindow_Loaded(ByVal sender As Object, ByVal e As RoutedEventArgs)
+            UpdateStatusBar()
+        End Sub
+
+        Private Sub richEditControl1_ContentChanged(ByVal sender As Object, ByVal e As EventArgs)
+            UpdateStatusBar()
+        End Sub
+
+        Private Sub UpdateStatusBar()
+            siWords.Content = richEditControl1.WordCount
+        End Sub
+    End Class
 End Namespace
